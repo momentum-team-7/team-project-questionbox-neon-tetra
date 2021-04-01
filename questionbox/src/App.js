@@ -36,13 +36,13 @@ function App() {
       </div>
 
       <div className='content-div'>
-        <h1>Content</h1>
+        <h1>Question Feed</h1>
         {questions.map((question) => (
           <QuestionFeed
-          question_title = {questions.question_title}
-          created_at = {questions.created_at}
-          question_text = {questions.question_text}
-          id = {questions.id}
+          question_title = {question.question_title}
+          created_at = {question.created_at}
+          question_text = {question.question_text}
+          id = {question.id}
           />
         ))}
       </div>

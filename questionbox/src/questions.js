@@ -36,3 +36,5 @@ const data = [
             question_text: "Which one is better"
         }
     ]
+
+    export default data;
