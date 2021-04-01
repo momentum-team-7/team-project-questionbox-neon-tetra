@@ -1,16 +1,19 @@
-import axios from 'axios'
-import { useEffect } from 'react'
+// import axios from 'axios'
+// import { useEffect } from 'react'
+import Question from './Question'
 
 
-const QuestionFeed = ({ question_title, id, created_at, question_text }) => {
+const QuestionFeed = ({ question_title, created_at, question_text }) => {
 
 
 
     return (
         <div>
-            <h3>{question_title}</h3>
-            <p>{created_at}</p>
-            <p>{question_text}</p>
+            <Question
+                question_title = {question_title}
+                created_at = {created_at}
+                question_text = {question_text}
+            />
         </div>
     )
 }

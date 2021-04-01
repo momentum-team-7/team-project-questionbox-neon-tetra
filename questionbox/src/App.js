@@ -37,8 +37,9 @@ function App() {
 
       <div className='content-div'>
         <h1>Question Feed</h1>
-        {questions.map((question) => (
+        {questions.map((question, index) => (
           <QuestionFeed
+          key = {index}
           question_title = {question.question_title}
           created_at = {question.created_at}
           question_text = {question.question_text}
