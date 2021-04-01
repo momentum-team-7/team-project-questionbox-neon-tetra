@@ -4,20 +4,41 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className='top-nav-bar'>
+          <h1>Question Box</h1>
+          <div className='top-nav-buttons'>
+            <button>Sign In</button>
+            <button>Register</button>
+
+          </div>
+        </div>
       </header>
+
+      <div>
+        <ul className='side-nav-bar'>
+          <li>
+            <button>Users</button>
+          </li>
+          <li>
+            <button>Questions</button>
+          </li>
+          <li>
+            <button>My Profile</button>
+          </li>
+        </ul>
+      </div>
+
+      <div className='content-div'>
+        <h1>Content</h1>
+      </div>
+
+
+      
+
+
+
     </div>
   );
 }
