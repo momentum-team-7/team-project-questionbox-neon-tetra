@@ -1,7 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import data from './questions'
+import QuestionFeed from './Components/QuestionFeed'
+import React, { useState } from 'react'
+
 
 function App() {
+  const [questions, setQuestion] = useState(data)
+
   return (
     <div className="App">
 
@@ -32,6 +37,14 @@ function App() {
 
       <div className='content-div'>
         <h1>Content</h1>
+        {questions.map((question) => (
+          <QuestionFeed
+          question_title = {questions.question_title}
+          created_at = {questions.created_at}
+          question_text = {questions.question_text}
+          id = {questions.id}
+          />
+        ))}
       </div>
 
 
