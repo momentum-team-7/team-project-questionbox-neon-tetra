@@ -1,59 +1,62 @@
 import './App.css';
 import data from './questions'
+import Home from './Components/Home'
 import QuestionFeed from './Components/QuestionFeed'
 import React, { useState } from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function App() {
-  const [questions, setQuestion] = useState(data)
+
 
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
 
-      <header className="App-header">
-        <div className='top-nav-bar'>
-          <h1>Question Box</h1>
-          <div className='top-nav-buttons'>
-            <button>Sign In</button>
-            <button>Register</button>
+        <header className="App-header">
+          <div className='top-nav-bar'>
+            <h1>Question Box</h1>
+            <div className='top-nav-buttons'>
+              <button>Sign In</button>
+              <button>Register</button>
 
+            </div>
           </div>
+        </header>
+
+        <div>
+          <ul className='side-nav-bar'>
+            <li>
+              <button>Users</button>
+            </li>
+            <li>
+              <button>Questions</button>
+            </li>
+            <li>
+              <button>My Profile</button>
+            </li>
+          </ul>
         </div>
-      </header>
 
-      <div>
-        <ul className='side-nav-bar'>
-          <li>
-            <button>Users</button>
-          </li>
-          <li>
-            <button>Questions</button>
-          </li>
-          <li>
-            <button>My Profile</button>
-          </li>
-        </ul>
-      </div>
+        <div className='content-div'>
+          <Switch>
+            <Route path='/'>
+              <Home />
+            </Route>
+          </Switch>
 
-      <div className='content-div'>
-        <h1>Question Feed</h1>
-        {questions.map((question, index) => (
-          <QuestionFeed
-          key = {index}
-          question_title = {question.question_title}
-          created_at = {question.created_at}
-          question_text = {question.question_text}
-          id = {question.id}
-          />
-        ))}
+        </div>
+
+
       </div>
 
 
-      
-
-
-
-    </div>
+    </Router>
   );
 }
 
