@@ -1,24 +1,24 @@
 import React, { useState } from 'react'
 
-const handleSubmit = (event) => {
+// const handleSubmit = (event) => {
     // this function, once the api url is added, should post the question to the database
     
-    event.preventDefault()
-    axios
-        .post(
-        '//apiurlgoeshere',
-        {
-            title: title,
-            body: body,
-        },
-        {
-            headers: { Authorization: `Token ${token}`},
-        }
-    )
-    .then((data) => {
-        handleDone(data.data)
-    })
-}
+//     event.preventDefault()
+//     axios
+//         .post(
+//         '//apiurlgoeshere',
+//         {
+//             title: title,
+//             body: body,
+//         },
+//         {
+//             headers: { Authorization: `Token ${token}`},
+//         }
+//     )
+//     .then((data) => {
+//         handleDone(data.data)
+//     })
+// }
 
 
 export default function AskQuestion() {

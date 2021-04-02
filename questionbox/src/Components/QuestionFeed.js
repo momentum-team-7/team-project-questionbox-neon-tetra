@@ -1,6 +1,6 @@
 // import axios from 'axios'
 // import { useEffect } from 'react'
-import Question from './Question'
+import QuestionDetail from './QuestionDetail'
 
 
 const QuestionFeed = ({ question_title, created_at, question_text }) => {
@@ -9,7 +9,7 @@ const QuestionFeed = ({ question_title, created_at, question_text }) => {
 
     return (
         <div>
-            <Question
+            <QuestionDetail
                 question_title = {question_title}
                 created_at = {created_at}
                 question_text = {question_text}

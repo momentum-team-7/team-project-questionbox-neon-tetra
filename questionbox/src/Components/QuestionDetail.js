@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Question({ question_title, created_at, question_text }) {
+export default function QuestionDetail({ question_title, created_at, question_text }) {
     return (
         <div>
             <h3>{question_title}</h3>
