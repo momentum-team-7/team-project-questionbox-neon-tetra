@@ -3,7 +3,7 @@
 import QuestionDetail from './QuestionDetail'
 
 
-const QuestionFeed = ({ question_title, created_at, question_text }) => {
+const QuestionFeed = ({ question_title, date_created, question_body, question_id }) => {
 
 
 
@@ -11,8 +11,9 @@ const QuestionFeed = ({ question_title, created_at, question_text }) => {
         <div>
             <QuestionDetail
                 question_title = {question_title}
-                created_at = {created_at}
-                question_text = {question_text}
+                date_created = {date_created}
+                question_body = {question_body}
+                question_id = {question_id}
             />
         </div>
     )

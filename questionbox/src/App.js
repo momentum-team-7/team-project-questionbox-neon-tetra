@@ -1,5 +1,5 @@
 import './App.css';
-import data from './questions'
+import data from './questions2'
 import Home from './Components/Home'
 import QuestionFeed from './Components/QuestionFeed'
 import React, { useState } from 'react'
