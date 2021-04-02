@@ -7,7 +7,6 @@ import React, { useState } from 'react'
 
 const QuestionFeed = ({  }) => {
 const [questions, setQuestions] = useState(data)
-console.log(questions)
 
 
     return (
@@ -16,7 +15,9 @@ console.log(questions)
             <Question
                 question_title = {question.title}
                 date_created = {question.date_created}
-                question_body = {question.body}
+                owner = {question.owner}
+                answered = {question.answered}
+                answers = {question.answers}
                 key = {question.id}
             />
             ))}

@@ -1,12 +1,15 @@
 import React from 'react'
 
-export default function Question ({ question_title, date_created, question_body, question_id }) {
+export default function Question ({ question_title, date_created, owner, answered, answers }) {
+// const [qanswered, setQAnswered] = ()
+
     return (
         <div>
             <h3>{question_title}</h3>
             <p>{date_created}</p>
-            <p>{question_body}</p>
-            <p>{question_id}</p>
+            <p>owner ID: {owner}</p>
+            <p>is it answered: {answered}</p>
+            <p>answers: {answers.length}</p>
         </div>
     )
 }
