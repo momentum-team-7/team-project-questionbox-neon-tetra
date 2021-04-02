@@ -24,6 +24,7 @@ function App() {
             <div className='top-nav-buttons'>
               <button>Sign In</button>
               <button>Register</button>
+              <button>Ask it</button>
 
             </div>
           </div>
