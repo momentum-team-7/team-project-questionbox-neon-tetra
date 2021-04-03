@@ -25,7 +25,7 @@ function App() {
             <div className='top-nav-buttons'>
               <button>Sign In</button>
               <button>Register</button>
-              <button>Ask it</button>
+              <button onClick>Ask it</button>
 
             </div>
           </div>
@@ -50,7 +50,7 @@ function App() {
             <Route path='/'>
               <Home />
             </Route>
-            {/* <Route path='/question/:id'>
+            {/* <Route exact path='/question/:id'>
               <DetailQuestion />
             </Route> */}
 
