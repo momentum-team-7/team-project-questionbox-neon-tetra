@@ -1,13 +1,11 @@
-// import axios from 'axios'
 import Question from './Question'
-
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-// import data from '../questions2'
+
 
 
 const QuestionFeed = () => {
-const [questions, setQuestions] = useState()
+const [questions, setQuestions] = useState([])
 
 
 
@@ -36,14 +34,14 @@ const [questions, setQuestions] = useState()
     return (
         <div>
             {questions.map((question) => (
-            <Question
-                question_title = {question.title}
-                date_created = {question.date_created}
-                owner = {question.owner}
-                answered = {question.answered}
-                answers = {question.answers}
-                key = {question.id}
-            />
+                <Question
+                    question_title = {question.title}
+                    date_created = {question.date_created}
+                    owner = {question.owner}
+                    answered = {question.answered}
+                    answers = {question.answers}
+                    key = {question.id}
+                />
             ))}
         </div>
     )

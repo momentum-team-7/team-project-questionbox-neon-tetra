@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Question ({ question_title, date_created, owner, answered, answers }) {
+export default function Question ({ question_title, date_created, owner, answered, answers, questions }) {
 // const [qanswered, setQAnswered] = ()
 
     return (
