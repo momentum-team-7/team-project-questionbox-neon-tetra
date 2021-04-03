@@ -23,12 +23,12 @@ export default function AskQuestion() {
                 body: body,
             },
             {
-                headers: { Authorization: `Token ${token}`},
+                // headers: { Authorization: `Token ${token}`},
             }
         )
-        .then((data) => {
-            handleDone(data.data)
-        })
+        // .then((data) => {
+        //     handleDone(data.data)
+        // })
     }
 
     return (

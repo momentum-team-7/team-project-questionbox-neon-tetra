@@ -2,6 +2,7 @@ import './App.css';
 import data from './questions2'
 import Home from './Components/Home'
 import QuestionFeed from './Components/QuestionFeed'
+import AskQuestion from './Components/AskQuestion'
 import React, { useState } from 'react'
 import {
   BrowserRouter as Router,
@@ -25,7 +26,10 @@ function App() {
             <div className='top-nav-buttons'>
               <button>Sign In</button>
               <button>Register</button>
-              <button onClick>Ask it</button>
+              <Link to="/AskQuestion"
+              title="Ask Question">
+                Whatcha thinkin bout?
+                </Link>
 
             </div>
           </div>
@@ -49,6 +53,9 @@ function App() {
           <Switch>
             <Route path='/'>
               <Home />
+            </Route>
+            <Route exact path='/AskQuestion'>
+              <AskQuestion />
             </Route>
             {/* <Route exact path='/question/:id'>
               <DetailQuestion />
