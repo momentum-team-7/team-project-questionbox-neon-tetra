@@ -9,6 +9,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import DetailQuestion from './Components/DetailQuestion';
 
 
 function App() {
@@ -49,6 +50,12 @@ function App() {
             <Route path='/'>
               <Home />
             </Route>
+            {/* <Route path='/question/:id'>
+              <DetailQuestion />
+            </Route> */}
+
+
+
           </Switch>
 
         </div>
