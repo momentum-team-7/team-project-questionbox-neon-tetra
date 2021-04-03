@@ -1,24 +1,36 @@
 // import axios from 'axios'
-// import { useEffect } from 'react'
 import Question from './Question'
-import data from '../questions2'
+
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+// import data from '../questions2'
+
+
+const QuestionFeed = () => {
+const [questions, setQuestions] = useState()
 
 
 
-const QuestionFeed = ({  }) => {
-const [questions, setQuestions] = useState(data)
+    useEffect(() => {
+        axios
+            .get('http://swordtail.herokuapp.com/questions/')
+            .then((response) => {
+                console.log('rendering:',response.data)
+                const data = response.data.map((dataByQuestion) => ({
+                    owner: dataByQuestion.owner,
+                    title: dataByQuestion.title,
+                    body: dataByQuestion.body,
+                    date_created: dataByQuestion.date_created,
+                    likes: dataByQuestion.likes,
+                    answered: dataByQuestion.answered,
+                    answers: dataByQuestion.answers,
+                    id: dataByQuestion.id
+                }))
+            setQuestions(data)
+            })
+    }, [])
 
-
-    // useEffect(() => {
-    //     axios
-    //         .get('http://swordtail.herokuapp.com/questions/')
-    //         .then((response) => {
-    //             console.log('rendering:',response.data)
-    //             setQuestions(response.data)
-    //         })
-    // }, [])
+    console.log(questions)
 
 
     return (
@@ -33,7 +45,6 @@ const [questions, setQuestions] = useState(data)
                 key = {question.id}
             />
             ))}
-        {/* <p>{questions}</p> */}
         </div>
     )
 }
