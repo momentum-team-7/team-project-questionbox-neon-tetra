@@ -1,14 +1,14 @@
 // import axios from 'axios'
 // import { useEffect } from 'react'
 import Question from './Question'
-// import data from '../questions2'
+import data from '../questions2'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 
 
 const QuestionFeed = ({  }) => {
-const [questions, setQuestions] = useState()
+const [questions, setQuestions] = useState(data)
 
 
     // useEffect(() => {
