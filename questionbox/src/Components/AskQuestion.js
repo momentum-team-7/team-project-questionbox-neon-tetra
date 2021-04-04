@@ -1,18 +1,18 @@
 import axios from 'axios'
 import { useState } from 'react'
-// import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 
-export default function AskQuestion() {
+export default function AskQuestion({ token, isLoggedIn }) {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
 
-    // if (!isLoggin) {
-    //     return <Redirect to="/login" />
-    // }
+    if (!isLoggedIn) {
+        return <Redirect to="/login" />
+    }
 
     const handleSubmit = (event) => {
-        // this function, once the api url is added, should post the question to the database
+
         
         event.preventDefault()
         axios
@@ -23,12 +23,9 @@ export default function AskQuestion() {
                 body: body,
             },
             {
-                // headers: { Authorization: `Token ${token}`},
+                headers: { Authorization: `Token ${token}`},
             }
         )
-        // .then((data) => {
-        //     handleDone(data.data)
-        // })
     }
 
     return (

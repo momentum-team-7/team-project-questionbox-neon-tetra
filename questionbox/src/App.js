@@ -1,5 +1,4 @@
 import './App.css';
-import data from './questions2';
 import Home from './Components/Home';
 import QuestionFeed from './Components/QuestionFeed';
 import AskQuestion from './Components/AskQuestion';
@@ -14,12 +13,14 @@ import DetailQuestion from './Components/DetailQuestion';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import useLocalStorageState from 'use-local-storage-state'
+import UserFeed from './Components/UserFeed';
 
 
 
 function App() {
   const [username, setUsername] = useLocalStorageState('notesUsername', '')
   const [token, setToken] = useLocalStorageState('notesToken', '')
+  const [isCreating, setIsCreating] = useState(false)
       
   function setAuth(username, token) {
     setUsername(username)
@@ -70,7 +71,13 @@ const isLoggedIn = username && token
           <Switch>
             
             <Route exact path='/askQuestion'>
-              <AskQuestion />
+              <AskQuestion
+              setAuth={setAuth}
+              isLoggedIn={isLoggedIn} 
+              token={token}/>
+            </Route>
+            <Route path="/userfeed" >
+              <UserFeed/>
             </Route>
             <Route path="/login" >
               <Login
@@ -79,7 +86,7 @@ const isLoggedIn = username && token
             </Route>
             <Route exact path="/register">
               <Register />
-              <Route path='/'>
+            <Route path='/'>
               <Home />
             </Route>
             </Route>
