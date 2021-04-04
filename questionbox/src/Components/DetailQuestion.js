@@ -6,6 +6,7 @@ import axios from 'axios'
 export default function DetailQuestion({ question }) {
     const { id } = useParams()
     const [questionDetail, setQuestionDetail] = useState([])
+    // const [loading, setLoading] = useState(false)
 
 
     useEffect(() => {
@@ -21,9 +22,15 @@ export default function DetailQuestion({ question }) {
                 setQuestionDetail(data.data)
             })
             
-    },[id])
+    },[id]);
+
     
     
+    console.log('post-render', questionDetail.answers)
+
+    // if (loading) {
+    //     return <p>Data is loading...</p>;
+    // }
     
     return (
         <div className='question-detail'>
@@ -34,6 +41,13 @@ export default function DetailQuestion({ question }) {
             </div>
 
             <div className='question-answers'>
+                <ul>
+                    {questionDetail.answers.map((answer) => (
+                        <li key={questionDetail.id}>{answer.body}</li>
+                    ))}
+                    
+                </ul>
+                {/* <p>[{questionDetail.answers}]</p> */}
                 
 
 

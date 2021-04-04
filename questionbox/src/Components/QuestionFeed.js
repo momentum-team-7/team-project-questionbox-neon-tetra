@@ -41,6 +41,7 @@ const [questions, setQuestions] = useState([])
                     answered = {question.answered}
                     answers = {question.answers}
                     key = {question.id}
+                    id = {question.id}
                 />
             ))}
         </div>
