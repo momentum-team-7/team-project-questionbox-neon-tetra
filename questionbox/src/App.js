@@ -1,9 +1,9 @@
 import './App.css';
-import data from './questions2'
-import Home from './Components/Home'
-import QuestionFeed from './Components/QuestionFeed'
-import AskQuestion from './Components/AskQuestion'
-import React, { useState } from 'react'
+import data from './questions2';
+import Home from './Components/Home';
+import QuestionFeed from './Components/QuestionFeed';
+import AskQuestion from './Components/AskQuestion';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,10 +11,27 @@ import {
   Link
 } from "react-router-dom";
 import DetailQuestion from './Components/DetailQuestion';
+import Login from './Components/Login';
+import Register from './Components/Register';
+import useLocalStorageState from 'use-local-storage-state'
+
 
 
 function App() {
+  const [username, setUsername] = useLocalStorageState('notesUsername', '')
+  const [token, setToken] = useLocalStorageState('notesToken', '')
+      
+  function setAuth(username, token) {
+    setUsername(username)
+    setToken(token)
+}
 
+function logOut() {
+    setToken(null)
+    setUsername(null)
+}
+
+const isLoggedIn = username && token
 
   return (
     <Router>
@@ -51,11 +68,20 @@ function App() {
 
         <div className='content-div'>
           <Switch>
-            <Route path='/'>
+            
+            <Route exact path='/askQuestion'>
+              <AskQuestion />
+            </Route>
+            <Route path="/login" >
+              <Login
+              setAuth={setAuth}
+              isLoggedIn={isLoggedIn}/>
+            </Route>
+            <Route exact path="/register">
+              <Register />
+              <Route path='/'>
               <Home />
             </Route>
-            <Route exact path='/AskQuestion'>
-              <AskQuestion />
             </Route>
             {/* <Route exact path='/question/:id'>
               <DetailQuestion />

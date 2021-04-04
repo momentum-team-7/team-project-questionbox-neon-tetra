@@ -21,6 +21,7 @@ export default function Login({ isLoggedIn, setAuth }) {
             .then((data) => {
                 if (data && data.data.auth_token) {
                     setAuth(username, data.data.auth_token)
+                    console.log(data.data.auth_token)
                 }
             })
             .catch((error) => {
@@ -41,7 +42,8 @@ export default function Login({ isLoggedIn, setAuth }) {
                     <input
                     type="text"
                     id="username"
-                    required value={username}
+                    required 
+                    value={username}
                     onChange={(event) => setUsername(event.target.value)}
                     />
                 </div>
@@ -53,7 +55,8 @@ export default function Login({ isLoggedIn, setAuth }) {
                     <input
                     type="text"
                     id="password"
-                    required value={password}
+                    required 
+                    value={password}
                     onChange={(event) => setPassword(event.target.value)}
                     />
                 </div>
