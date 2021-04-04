@@ -2,6 +2,7 @@ import './App.css';
 import data from './questions2'
 import Home from './Components/Home'
 import QuestionFeed from './Components/QuestionFeed'
+import DetailQuestion from './Components/DetailQuestion'
 import React, { useState } from 'react'
 import {
   BrowserRouter as Router,
@@ -9,11 +10,10 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import DetailQuestion from './Components/DetailQuestion';
+// import useLocalStorageState from 'use-local-storage-state'
 
 
 function App() {
-
 
   return (
     <Router>
@@ -47,12 +47,12 @@ function App() {
 
         <div className='content-div'>
           <Switch>
-            <Route path='/'>
+            <Route exact path='/'>
               <Home />
             </Route>
-            {/* <Route exact path='/question/:id'>
+            <Route path='/question/:id'>
               <DetailQuestion />
-            </Route> */}
+            </Route>
 
 
 
