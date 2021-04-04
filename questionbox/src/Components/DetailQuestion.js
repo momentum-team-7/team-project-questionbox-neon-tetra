@@ -1,24 +1,44 @@
-// import React from 'react'
-// import Question from './Question'
-// import { useParams } from 'react-router-dom'
-// import data from '../questions'
+import React, { useState, useEffect } from 'react'
+import Question from './Question'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
-// export default function DetailQuestion() {
-//     // let { id } = useParams()
+export default function DetailQuestion({ question }) {
+    const { id } = useParams()
+    const [questionDetail, setQuestionDetail] = useState([])
+
+
+    useEffect(() => {
+        axios
+            .get(`http://swordtail.herokuapp.com/questions/${id}`)
+            // {
+            //     headers: {
+            //         Authorization: `Token ${token}`,
+            //     },
+            // })
+            .then((data) => {
+                console.log('questionDetail:', data.data)
+                setQuestionDetail(data.data)
+            })
+            
+    },[id])
     
     
     
-//     return (
-//         <div>
-//             <div className='question-detail'>
+    return (
+        <div className='question-detail'>
+            <div>
+                <h1>Question Details</h1>
+                <p>Question: {questionDetail.title}</p>
+                
+            </div>
+
+            <div className='question-answers'>
+                
 
 
-//                 <h2>{question_title}</h2>
-//                 <p>{date_created}</p>
-//                 <p>{question_body}</p>
+            </div>
 
-//             </div>
-
-//         </div>
-//     )
-// }
+        </div>
+    )
+}
