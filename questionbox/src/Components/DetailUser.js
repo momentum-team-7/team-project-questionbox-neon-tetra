@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -37,7 +39,7 @@ export default function DetailUser() {
                             <div className="user-questions">
                                 <h3>Questions</h3>
                                 {userDetail.questions.map((question) => (
-                                    <li key={question.id}>{question.title}</li>
+                                    <li key={question.id}><Link to={`/question/${question.id}`}>{question.title}</Link></li>
                                 ))}
                             </div>
                             <div className="user-answers">
