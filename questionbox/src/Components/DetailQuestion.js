@@ -40,8 +40,6 @@ export default function DetailQuestion({ question }) {
                 
             </div>
 
-            <div className='question-answers'>
-                
             {questionDetail.answers ? (
                 <div className='question-answers'>
                     <ul>
@@ -55,10 +53,6 @@ export default function DetailQuestion({ question }) {
                     <p>Still loading...</p>
                 )}
                 
-
-
-            </div>
-
         </div>
     )
 }
