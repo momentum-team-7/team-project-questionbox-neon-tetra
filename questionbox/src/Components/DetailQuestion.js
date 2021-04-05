@@ -41,7 +41,10 @@ export default function DetailQuestion({ question }) {
                     <h3 className='answers-header'>Answers:</h3>
                     <ul>
                         {questionDetail.answers.map((answer) => (
-                            <li key={questionDetail.id}>{answer.body}</li>
+                            <div>
+                                <li key={questionDetail.id}>{answer.body}</li>
+                                <p>Author: {answer.owner}</p>
+                            </div>    
                         ))}
                         
                     </ul>
