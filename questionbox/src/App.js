@@ -12,6 +12,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import AskQuestion from './Components/AskQuestion';
 // import useLocalStorageState from 'use-local-storage-state'
 
 
@@ -27,7 +28,7 @@ function App() {
             <div className='top-nav-buttons'>
               <button>Sign In</button>
               <button>Register</button>
-              <button>Ask it</button>
+              <Link to="/AskQuestion" type="button" className="btn btn-primary">Ask it</Link>
 
             </div>
           </div>
@@ -57,6 +58,9 @@ function App() {
             </Route>
             <Route path="/userfeed" >
               <UserFeed/>
+            </Route>
+            <Route path="/AskQuestion" >
+              <AskQuestion/>
             </Route>
             <Route exact path='/'>
               <Home />
