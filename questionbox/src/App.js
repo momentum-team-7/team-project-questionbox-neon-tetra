@@ -39,7 +39,7 @@ function App() {
               <Link to="/" type="button" className="btn btn-primary">Home</Link>
             </li>
             <li>
-              <button>Users</button>
+            <Link to="/userfeed" type="button" className="btn btn-primary">Users</Link>
             </li>
             <li>
               <button>Questions</button>

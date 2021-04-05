@@ -36,7 +36,15 @@ li {
 }
 
 .question-detail {
-  margin-top: 26%;
-  margin-left: 26%;
+  border: 1px solid black;
+  margin-bottom: 15%;
+  padding: 10px;
+}
 
+.question-answers {
+  border: 1px solid black;
+}
+
+.answers-header {
+  padding-left: 10px;
 }
