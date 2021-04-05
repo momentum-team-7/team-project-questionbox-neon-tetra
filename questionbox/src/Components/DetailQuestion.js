@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Question from './Question'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import AnswerQuestion from './AnswerQuestion'
 
 export default function DetailQuestion({ question }) {
     const { id } = useParams()
@@ -34,7 +35,13 @@ export default function DetailQuestion({ question }) {
                 <p>Asked By: {questionDetail.owner}</p>
                 <p>Date Asked: {questionDetail.date_created}</p>
                 <p>Question Body: {questionDetail.body}</p>
+
+
             </div>
+
+            <AnswerQuestion 
+            question={questionDetail.Id}
+            />
 
             {questionDetail.answers ? (
                 <div className='question-answers'>
