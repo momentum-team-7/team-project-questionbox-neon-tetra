@@ -40,19 +40,19 @@ export default function DetailQuestion({ question }) {
                 
             </div>
 
-            <div className='question-answers'>
-                <ul>
-                    {questionDetail.answers.map((answer) => (
-                        <li key={questionDetail.id}>{answer.body}</li>
-                    ))}
-                    
-                </ul>
-                {/* <p>[{questionDetail.answers}]</p> */}
+            {questionDetail.answers ? (
+                <div className='question-answers'>
+                    <ul>
+                        {questionDetail.answers.map((answer) => (
+                            <li key={questionDetail.id}>{answer.body}</li>
+                        ))}
+                        
+                    </ul>
+                </div>
+                ) : (
+                    <p>Still loading...</p>
+                )}
                 
-
-
-            </div>
-
         </div>
     )
 }
