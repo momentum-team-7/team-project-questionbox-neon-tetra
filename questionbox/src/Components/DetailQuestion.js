@@ -3,6 +3,8 @@ import Question from './Question'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import AnswerQuestion from './AnswerQuestion'
+import { Link } from 'react-router-dom'
+
 
 export default function DetailQuestion({ question }) {
     const { id } = useParams()
@@ -50,7 +52,7 @@ export default function DetailQuestion({ question }) {
                         {questionDetail.answers.map((answer) => (
                             <div>
                                 <li key={questionDetail.id}>{answer.body}</li>
-                                <p>Author: {answer.owner}</p>
+                                <p>Author: <Link to={`/owner/${answer.owner_id}`}>{answer.owner}</Link></p>
                             </div>    
                         ))}
                         
