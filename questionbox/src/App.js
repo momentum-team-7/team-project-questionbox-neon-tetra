@@ -34,6 +34,9 @@ function App() {
         <div>
           <ul className='side-nav-bar'>
             <li>
+              <Link to="/" type="button" className="btn btn-primary">Home</Link>
+            </li>
+            <li>
               <button>Users</button>
             </li>
             <li>
