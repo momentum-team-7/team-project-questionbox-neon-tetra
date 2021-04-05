@@ -11,7 +11,7 @@ export default function Question ({ question_title, date_created, owner, answere
             {/* ID still undefined */}
             <Link to={`/question/${id}`}><h3>{question_title}</h3></Link>
             <p>{date_created}</p>
-            <p>owner ID: {owner}</p>
+            <Link to={` /owner/${id}`}><p>{owner}</p></Link>
             <p>is it answered: {answered}</p>
             <p>answers: {answers.length}</p>
         </div>

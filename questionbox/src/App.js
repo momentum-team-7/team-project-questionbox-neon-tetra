@@ -4,6 +4,7 @@ import Home from './Components/Home'
 import QuestionFeed from './Components/QuestionFeed'
 import DetailQuestion from './Components/DetailQuestion'
 import React, { useState } from 'react'
+import UserFeed from './Components/UserFeed'
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,7 +26,7 @@ function App() {
             <div className='top-nav-buttons'>
               <button>Sign In</button>
               <button>Register</button>
-              <button onClick>Ask it</button>
+              <button>Ask it</button>
 
             </div>
           </div>
@@ -47,6 +48,9 @@ function App() {
 
         <div className='content-div'>
           <Switch>
+            <Route path="/userfeed" >
+              <UserFeed/>
+            </Route>
             <Route exact path='/'>
               <Home />
             </Route>
