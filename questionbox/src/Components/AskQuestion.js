@@ -1,19 +1,27 @@
 import axios from 'axios'
 import { useState } from 'react'
-// import { Redirect } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 
 export default function AskQuestion() {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
-
+    
+    const token = 'ae60a41a7a7c2881b7b3dc9aecb029a78ef37957'
     // if (!isLoggin) {
     //     return <Redirect to="/login" />
     // }
 
+
+    // this was to move the user off the AskQuestion page on submission of the form, but the form wasn't actually submitting and the user was routed off too quickly // add line 17 down to the final button at the botttom
+    // onClick={handleClick}
+    // const history = useHistory();
+    // const handleClick = () => {
+    //     history.push("/UserFeed")
+    
+
     const handleSubmit = (event) => {
-        // this function, once the api url is added, should post the question to the database
-        
+        console.log('handleSubmit running')
         event.preventDefault()
         axios
             .post(
@@ -26,15 +34,16 @@ export default function AskQuestion() {
                 headers: { Authorization: `Token ${token}`},
             }
         )
-        .then((data) => {
-            handleDone(data.data)
-        })
+        
+        // .then((data) => {
+        //     handleDone(data.data)
+        // })
     }
 
     return (
         <div>
             <h2>Ask a Question--</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={(event)=> handleSubmit(event)}>
                 <div className="question-title">
                     <label for="question-title"></label>
                     <input id="question-title"
