@@ -5,6 +5,7 @@ import QuestionFeed from './Components/QuestionFeed'
 import DetailQuestion from './Components/DetailQuestion'
 import React, { useState } from 'react'
 import UserFeed from './Components/UserFeed'
+import DetailUser from './Components/DetailUser'
 import {
   BrowserRouter as Router,
   Switch,
@@ -48,6 +49,9 @@ function App() {
 
         <div className='content-div'>
           <Switch>
+            <Route path='/owner/:id'>
+              <DetailUser />
+            </Route>
             <Route path="/userfeed" >
               <UserFeed/>
             </Route>
@@ -57,6 +61,7 @@ function App() {
             <Route path='/question/:id'>
               <DetailQuestion />
             </Route>
+            
 
 
 
