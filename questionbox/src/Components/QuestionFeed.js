@@ -33,7 +33,9 @@ const [questions, setQuestions] = useState([])
 
     return (
         <div>
+            <ul>
             {questions.map((question) => (
+                <li key={question.id}>
                 <Question
                     question_title = {question.title}
                     date_created = {question.date_created}
@@ -43,7 +45,9 @@ const [questions, setQuestions] = useState([])
                     key = {question.id}
                     id = {question.id}
                 />
+                </li>
             ))}
+            </ul>
         </div>
     )
 }
