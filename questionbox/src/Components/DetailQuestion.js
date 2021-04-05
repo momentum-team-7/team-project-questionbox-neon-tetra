@@ -34,6 +34,9 @@ export default function DetailQuestion({ question }) {
                 <h4>Question: "{questionDetail.title}?"</h4>
                 <p>Asked By: {questionDetail.owner}</p>
                 <p>Date Asked: {questionDetail.date_created}</p>
+                <p>Question Body: {questionDetail.body}</p>
+
+
             </div>
 
             <AnswerQuestion 
