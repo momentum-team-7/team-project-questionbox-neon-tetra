@@ -44,6 +44,7 @@ const [questions, setQuestions] = useState([])
                     answers = {question.answers}
                     key = {question.id}
                     id = {question.id}
+                    owner_id = {question.owner_id}
                 />
                 </li>
             ))}
