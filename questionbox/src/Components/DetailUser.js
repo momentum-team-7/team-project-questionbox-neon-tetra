@@ -45,7 +45,10 @@ export default function DetailUser() {
                             <div className="user-answers">
                                 <h3>Answers</h3>
                                 {userDetail.answers.map((answer) => (
-                                    <li key={answer.id}>{answer.body}</li>
+                                    <div>    
+                                        <li key={answer.id}>{answer.body}</li>
+                                        <p>Question: <Link to={`/question/${answer.question}`}>{answer.question_title}</Link></p>
+                                    </div>    
                                 ))}
                             </div>
                         </div>
