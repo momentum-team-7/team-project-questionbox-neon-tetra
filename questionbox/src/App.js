@@ -4,6 +4,7 @@ import Home from './Components/Home'
 import QuestionFeed from './Components/QuestionFeed'
 import DetailQuestion from './Components/DetailQuestion'
 import React, { useState } from 'react'
+import useLocalStorageState from 'use-local-storage-state'
 import UserFeed from './Components/UserFeed'
 import DetailUser from './Components/DetailUser'
 import {
@@ -13,10 +14,24 @@ import {
   Link
 } from "react-router-dom";
 import AskQuestion from './Components/AskQuestion';
-// import useLocalStorageState from 'use-local-storage-state'
+import Login from './Components/Login';
 
 
 function App() {
+  const [username, setUsername] = useLocalStorageState('username', '')
+  const [token, setToken] = useLocalStorageState('token', '')
+
+  function setAuth(username, token) {
+    setUsername(username)
+    setToken(token)
+  }
+
+  function logOut() {
+    setUsername(null)
+    setToken(null)
+  }
+
+  const isLoggedIn = username && token 
 
   return (
     <Router>
@@ -68,10 +83,9 @@ function App() {
             <Route path='/question/:id'>
               <DetailQuestion />
             </Route>
-            
-
-
-
+            <Route>
+              <Login setAuth={setAuth} isLoggedIn={isLoggedIn} />
+            </Route>
           </Switch>
 
         </div>
