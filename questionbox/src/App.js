@@ -75,13 +75,13 @@ function App() {
               <UserFeed/>
             </Route>
             <Route path="/AskQuestion" >
-              <AskQuestion/>
+              <AskQuestion isLoggedIn={isLoggedIn} token={token}/>
             </Route>
             <Route exact path='/'>
               <Home />
             </Route>
             <Route path='/question/:id'>
-              <DetailQuestion />
+              <DetailQuestion token={token}/>
             </Route>
             <Route>
               <Login setAuth={setAuth} isLoggedIn={isLoggedIn} token={token} />
