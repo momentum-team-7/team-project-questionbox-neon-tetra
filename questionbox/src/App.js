@@ -1,5 +1,4 @@
 import './App.css';
-import data from './questions2'
 import Home from './Components/Home'
 import QuestionFeed from './Components/QuestionFeed'
 import DetailQuestion from './Components/DetailQuestion'
@@ -41,10 +40,17 @@ function App() {
           <div className='top-nav-bar'>
             <h1>Question Box</h1>
             <div className='top-nav-buttons'>
-              <button>Sign In</button>
-              <button>Register</button>
-              <Link to="/AskQuestion" type="button" className="btn btn-primary">Ask it</Link>
-
+              {isLoggedIn ? (
+                <>
+                  <Link to="/AskQuestion">Ask it</Link>
+                  <Link to="/logOut" onClick={logOut}>Log Out</Link>
+                </>  
+              ) : (
+                <>
+                  <Link to="/Registeration">Register</Link>
+                  <Link to="/Login">Log In</Link>
+                </>
+              )}
             </div>
           </div>
         </header>
