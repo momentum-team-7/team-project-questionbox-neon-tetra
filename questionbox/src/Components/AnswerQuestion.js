@@ -33,10 +33,10 @@ export default function AnswerQuestion( question, token ) {
                 </div> */}
                 <div>
                     <label for='answer-body'></label>
-                    <input 
+                    <textarea 
                     id='answer-body'
                     type='text'
-                    onChange={(event) => setBody(event.target.value)}></input>
+                    onChange={(event) => setBody(event.target.value)}></textarea>
                 </div>
                 <div>
                     <button 
