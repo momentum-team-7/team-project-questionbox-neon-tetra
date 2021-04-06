@@ -34,7 +34,7 @@ export default function DetailQuestion({ question }) {
             <div className='question-detail'>
                 <h1>Question Details</h1>
                 <h4>Question: "{questionDetail.title}?"</h4>
-                <p>Asked By: {questionDetail.owner}</p>
+                <p>Asked By: <Link to={`/owner/${questionDetail.owner_id}`}>{questionDetail.owner}</Link></p>
                 <p>Date Asked: {questionDetail.date_created}</p>
                 <p>Question Body: {questionDetail.body}</p>
 
