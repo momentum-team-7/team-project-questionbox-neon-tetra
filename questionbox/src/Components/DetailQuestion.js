@@ -42,7 +42,7 @@ export default function DetailQuestion({ question }) {
             </div>
 
             <AnswerQuestion 
-            question={questionDetail.Id}
+            question_id={questionDetail.id}
             />
 
             {questionDetail.answers ? (

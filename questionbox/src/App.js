@@ -84,7 +84,7 @@ function App() {
               <DetailQuestion />
             </Route>
             <Route>
-              <Login setAuth={setAuth} isLoggedIn={isLoggedIn} />
+              <Login setAuth={setAuth} isLoggedIn={isLoggedIn} token={token} />
             </Route>
           </Switch>
 
