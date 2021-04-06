@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 // import { useParams } from 'react-router-dom'
 
 export default function Question ({ question_title, date_created, owner, answered, answers, questions, id, owner_id }) {
