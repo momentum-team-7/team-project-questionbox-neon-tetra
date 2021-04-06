@@ -1,9 +1,7 @@
 import './App.css';
-import data from './questions2'
 import Home from './Components/Home'
-import QuestionFeed from './Components/QuestionFeed'
 import DetailQuestion from './Components/DetailQuestion'
-import React, { useState } from 'react'
+import React from 'react'
 import useLocalStorageState from 'use-local-storage-state'
 import UserFeed from './Components/UserFeed'
 import DetailUser from './Components/DetailUser'
@@ -15,6 +13,7 @@ import {
 } from "react-router-dom";
 import AskQuestion from './Components/AskQuestion';
 import Login from './Components/Login';
+import Registration from './Components/Registration';
 
 
 function App() {
@@ -83,8 +82,11 @@ function App() {
             <Route path='/question/:id'>
               <DetailQuestion />
             </Route>
-            <Route>
+            <Route path='/login'>
               <Login setAuth={setAuth} isLoggedIn={isLoggedIn} token={token} />
+            </Route>
+            <Route path='/registration'>
+              <Registration setAuth={setAuth} isLoggedIn={isLoggedIn} />
             </Route>
           </Switch>
 
