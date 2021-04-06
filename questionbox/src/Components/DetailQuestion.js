@@ -6,7 +6,7 @@ import AnswerQuestion from './AnswerQuestion'
 import { Link } from 'react-router-dom'
 
 
-export default function DetailQuestion({ question }) {
+export default function DetailQuestion({ token }) {
     const { id } = useParams()
     const [questionDetail, setQuestionDetail] = useState([])
 
@@ -43,6 +43,7 @@ export default function DetailQuestion({ question }) {
 
             <AnswerQuestion 
             question_id={questionDetail.id}
+            token={token}
             />
 
             {questionDetail.answers ? (

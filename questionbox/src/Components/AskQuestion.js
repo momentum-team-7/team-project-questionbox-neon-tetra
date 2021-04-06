@@ -3,11 +3,10 @@ import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 
-export default function AskQuestion() {
+export default function AskQuestion({ token }) {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
     
-    const token = 'ae60a41a7a7c2881b7b3dc9aecb029a78ef37957'
     // if (!isLoggin) {
     //     return <Redirect to="/login" />
     // }
