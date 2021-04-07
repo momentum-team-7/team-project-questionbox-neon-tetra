@@ -47,7 +47,7 @@ function App() {
                 </>  
               ) : (
                 <>
-                  <Link to="/Registeration">Register</Link>
+                  <Link to="/Registration">Register</Link>
                   <Link to="/Login">Log In</Link>
                 </>
               )}

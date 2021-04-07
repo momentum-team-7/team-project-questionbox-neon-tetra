@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Question from './Question'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import AnswerQuestion from './AnswerQuestion'
@@ -9,6 +8,7 @@ import { Link } from 'react-router-dom'
 export default function DetailQuestion({ token }) {
     const { id } = useParams()
     const [questionDetail, setQuestionDetail] = useState([])
+    const [answers, setAnswers] = useState([])
 
     useEffect(() => {
         axios
@@ -20,11 +20,14 @@ export default function DetailQuestion({ token }) {
             // })
             .then((data) => {
                 console.log('questionDetail:', data.data)
-                setQuestionDetail(data.data)
+                setQuestionDetail(data.data);
+                setAnswers(data.data.answers);
+                console.log('answers array is: ', data.data.answers)
+                console.log('questionDetail is ', questionDetail)
+                console.log('answers is ', answers)
             })
             
     },[id]);
-
 
     const deleteQuestion = () => {
         axios
@@ -63,6 +66,11 @@ export default function DetailQuestion({ token }) {
             <AnswerQuestion 
             question_id={questionDetail.id}
             token={token}
+            answers={answers}
+            setAnswers={setAnswers}
+            handleDone={(newAnswer) => {
+                setAnswers([...answers, newAnswer])
+            }}
             />
 
             {questionDetail.answers ? (

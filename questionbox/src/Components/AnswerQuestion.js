@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-export default function AnswerQuestion({ question_id, token }) {
+export default function AnswerQuestion({ question_id, token, answers, setAnswers, handleDone }) {
     const [body, setBody] = useState('')
 
     const handleSubmit = (event) => {
@@ -16,6 +16,10 @@ export default function AnswerQuestion({ question_id, token }) {
             },
             {
                 headers: { Authorization: `Token ${token}`},
+            }
+            )
+            .then((data) => {
+                handleDone(data.data)
             })
     }
 
@@ -31,7 +35,8 @@ export default function AnswerQuestion({ question_id, token }) {
                 </div>
                 <div>
                     <button 
-                    type='submit'>
+                    type='submit'
+                    >
                         Submit
                     </button>
                 </div>
