@@ -31,9 +31,9 @@ export default function AskQuestion({ token }) {
             },
             {
                 headers: { Authorization: `Token ${token}`},
-            }
-        ).then(() => {
-            return <Redirect to='/' />)}
+            })
+            // .then(() => {
+        //     return <Redirect to='/' />)}
     }
 
     return (

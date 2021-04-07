@@ -10,6 +10,7 @@ export default function DetailQuestion({ token }) {
     const { id } = useParams()
     const [questionDetail, setQuestionDetail] = useState([])
     const [answers, setAnswers] = useState([])
+    const [liked, setLiked] = useState(false)
 
     useEffect(() => {
         axios
