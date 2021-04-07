@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom'
 export default function AskQuestion({ token }) {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
+    const [submitted, setSubmitted] = useState(false)
     
     // if (!isLoggin) {
     //     return <Redirect to="/login" />
@@ -32,8 +33,11 @@ export default function AskQuestion({ token }) {
             {
                 headers: { Authorization: `Token ${token}`},
             })
-            // .then(() => {
-        //     return <Redirect to='/' />)}
+            }
+        setSubmitted(true);
+        if (submitted) {
+            return <Redirect to="/" />
+        }
     }
 
     return (
