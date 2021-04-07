@@ -35,10 +35,9 @@ export default function AskQuestion({ token }) {
             }
         );
         setSubmitted(true);
-        .then(data) => {
         if (submitted) {
             return <Redirect to="/" />
-        }}
+        }
     }
 
     return (
