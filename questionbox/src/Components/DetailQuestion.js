@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 export default function DetailQuestion({ token }) {
     const { id } = useParams()
     const [questionDetail, setQuestionDetail] = useState([])
+    const [liked, setLiked] = useState(false)
 
     useEffect(() => {
         axios
@@ -41,6 +42,18 @@ export default function DetailQuestion({ token }) {
             },
             )}
 
+
+    function likeAnswer(id) {
+        axios
+        .put(`http://swordtail.herokuapp.com/answers/${id}/`,
+        {
+            
+        },
+        {
+            headers: { Authorization: `Token ${token}`},
+        })
+    }
+
     
     
     console.log('post-render', questionDetail.answers)
@@ -71,8 +84,17 @@ export default function DetailQuestion({ token }) {
                     <ul>
                         {questionDetail.answers.map((answer) => (
                             <div>
-                                <li key={questionDetail.id}>{answer.body}</li>
+                                <li key={questionDetail.id}>
+                                <p>{answer.body}</p>
                                 <p>Author: <Link to={`/owner/${answer.owner_id}`}>{answer.owner}</Link></p>
+                                <p>&#128077;: {answer.likers.length} </p>
+                                <button
+                                value={answer.id}
+                                onClick={(event) => (likeAnswer(event.target.value))}
+                                >
+                                    Like
+                                </button>
+                                </li>
                             </div>    
                         ))}
                         

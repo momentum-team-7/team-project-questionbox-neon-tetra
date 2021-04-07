@@ -14,6 +14,7 @@ import {
 import AskQuestion from './Components/AskQuestion';
 import Login from './Components/Login';
 import Registration from './Components/Registration';
+import axios from 'axios';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
   }
 
   const isLoggedIn = username && token 
+
 
   return (
     <Router>
@@ -75,16 +77,16 @@ function App() {
         <div className='content-div'>
           <Switch>
             <Route path='/owner/:id'>
-              <DetailUser />
+              <DetailUser token={token}/>
             </Route>
             <Route path="/userfeed" >
-              <UserFeed/>
+              <UserFeed token={token}/>
             </Route>
             <Route path="/AskQuestion" >
               <AskQuestion isLoggedIn={isLoggedIn} token={token}/>
             </Route>
             <Route exact path='/'>
-              <Home />
+              <Home token={token}/>
             </Route>
             <Route path='/question/:id'>
               <DetailQuestion token={token}/>
