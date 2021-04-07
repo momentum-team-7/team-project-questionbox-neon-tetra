@@ -25,6 +25,22 @@ export default function DetailQuestion({ token }) {
             
     },[id]);
 
+
+    const deleteQuestion = () => {
+        axios
+            .delete(`http://swordtail.herokuapp.com/questions/${id}`,
+            {
+                headers: { Authorization: `Token ${token}`},
+            }
+            )
+            .then((response) => {
+                console.log('delete', response)
+                if(response.data != null) {
+                    alert('Question was deleted successfully');
+                }
+            },
+            )}
+
     
     
     console.log('post-render', questionDetail.answers)
@@ -37,6 +53,9 @@ export default function DetailQuestion({ token }) {
                 <p>Asked By: <Link to={`/owner/${questionDetail.owner_id}`}>{questionDetail.owner}</Link></p>
                 <p>Date Asked: {questionDetail.date_created}</p>
                 <p>Question Body: {questionDetail.body}</p>
+                <button
+                onClick={(event) => deleteQuestion(id, event)}
+                >Delete this question</button>
 
 
             </div>
