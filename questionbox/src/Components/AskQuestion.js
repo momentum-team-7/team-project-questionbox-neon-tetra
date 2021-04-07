@@ -32,13 +32,12 @@ export default function AskQuestion({ token }) {
             },
             {
                 headers: { Authorization: `Token ${token}`},
+            })
             }
-        );
-        setSubmitted(true);
-        if (submitted) {
-            return <Redirect to="/" />
-        }
-    }
+        // setSubmitted(true);
+        // if (submitted) {
+        //     return <Redirect to="/" />
+        // }
 
     return (
         <div>

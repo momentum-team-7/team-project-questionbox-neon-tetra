@@ -49,6 +49,9 @@ export default function DetailQuestion({ token }) {
         {
             headers: { Authorization: `Token ${token}`},
         })
+        .then((data) => {
+            handleDone(data.data)
+        })
     }
 
     
