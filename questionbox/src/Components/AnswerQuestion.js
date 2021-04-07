@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-export default function AnswerQuestion({ question_id, token }) {
+export default function AnswerQuestion({ question_id, token, handleDone }) {
     const [body, setBody] = useState('')
 
     const handleSubmit = (event) => {
@@ -17,6 +17,10 @@ export default function AnswerQuestion({ question_id, token }) {
             {
                 headers: { Authorization: `Token ${token}`},
             })
+            .then((data) => {
+                handleDone(data.data)
+            setBody('')
+            })
     }
 
     return (
@@ -26,6 +30,7 @@ export default function AnswerQuestion({ question_id, token }) {
                     <label for='answer-body'></label>
                     <textarea 
                     id='answer-body'
+                    value={body}
                     type='text'
                     onChange={(event) => setBody(event.target.value)}></textarea>
                 </div>

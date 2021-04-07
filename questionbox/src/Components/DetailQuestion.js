@@ -9,23 +9,20 @@ import { Link } from 'react-router-dom'
 export default function DetailQuestion({ token }) {
     const { id } = useParams()
     const [questionDetail, setQuestionDetail] = useState([])
-    const [liked, setLiked] = useState(false)
+    const [answers, setAnswers] = useState([])
 
     useEffect(() => {
         axios
             .get(`http://swordtail.herokuapp.com/questions/${id}`)
-            // {
-            //     headers: {
-            //         Authorization: `Token ${token}`,
-            //     },
-            // })
             .then((data) => {
-                console.log('questionDetail:', data.data)
                 setQuestionDetail(data.data)
             })
-            
-    },[id]);
-
+            return () => setAnswers(questionDetail.answers)
+    },[id, answers]);
+    
+    const handleDone = (newAnswers) => {
+        setAnswers([...answers, newAnswers])
+    }
 
     const deleteQuestion = () => {
         axios
@@ -56,7 +53,6 @@ export default function DetailQuestion({ token }) {
 
     
     
-    console.log('post-render', questionDetail.answers)
     
     return (
         <div className='question-detail-container'>
@@ -76,6 +72,7 @@ export default function DetailQuestion({ token }) {
             <AnswerQuestion 
             question_id={questionDetail.id}
             token={token}
+            handleDone={handleDone}
             />
 
             {questionDetail.answers ? (
