@@ -10,7 +10,6 @@ export default function DetailQuestion({ token }) {
     const { id } = useParams()
     const [questionDetail, setQuestionDetail] = useState([])
     const [answers, setAnswers] = useState([])
-    const [liked, setLiked] = useState(false)
 
     useEffect(() => {
         axios
@@ -49,6 +48,9 @@ export default function DetailQuestion({ token }) {
         },
         {
             headers: { Authorization: `Token ${token}`},
+        })
+        .then((data) => {
+            handleDone(data.data)
         })
     }
 
