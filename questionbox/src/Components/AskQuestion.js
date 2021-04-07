@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 
 export default function AskQuestion({ token }) {
@@ -32,11 +32,8 @@ export default function AskQuestion({ token }) {
             {
                 headers: { Authorization: `Token ${token}`},
             }
-        )
-        
-        // .then((data) => {
-        //     handleDone(data.data)
-        // })
+        ).then(() => {
+            return <Redirect to='/' />)}
     }
 
     return (
