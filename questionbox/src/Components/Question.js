@@ -1,15 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
-// import { useParams } from 'react-router-dom'
+
 
 export default function Question ({ question_title, date_created, owner, answered, answers, questions, id, owner_id, }) {
-    // const { id } = useParams()
-// const [qanswered, setQAnswered] = ()
 
     return (
         <div className="question">
-            {/* ID still undefined */}
             <div className="question-question-title"><Link to={`/question/${id}`}><h3>{question_title}</h3></Link></div>
             <div className="question-question-asked-by"><p>Asked by: <Link to={`/owner/${owner_id}`}>{owner}</Link></p></div>
             <div className="question-date-created"><p>Asked at: {date_created}</p></div>

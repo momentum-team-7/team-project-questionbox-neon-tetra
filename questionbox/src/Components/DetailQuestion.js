@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Question from './Question'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import AnswerQuestion from './AnswerQuestion'
 import { Link, Redirect } from 'react-router-dom'
-import UserFeed from './UserFeed'
 import lodash from 'lodash'
 
 

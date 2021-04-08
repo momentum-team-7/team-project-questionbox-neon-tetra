@@ -14,11 +14,6 @@ export default function DetailUser() {
     useEffect(() => {
         axios
             .get(`http://swordtail.herokuapp.com/users/${id}`)
-            // {
-            //     headers: {
-            //         Authorization: `Token ${token}`,
-            //     },
-            // })
             .then((data) => {
                 console.log('userDetail:', data.data)
                 setUserDetail(data.data)

@@ -12,7 +12,7 @@ export default function AskQuestion({ token, handleDone }) {
     if (submitted) {
         return <Redirect to='/' />
     }
-   
+
     const handleSubmit = (event) => {
         console.log('handleSubmit running')
         event.preventDefault()

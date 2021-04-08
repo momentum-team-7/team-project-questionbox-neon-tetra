@@ -14,7 +14,7 @@ import {
 import AskQuestion from './Components/AskQuestion';
 import Login from './Components/Login';
 import Registration from './Components/Registration';
-import axios from 'axios';
+
 
 
 function App() {
