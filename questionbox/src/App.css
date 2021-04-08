@@ -74,17 +74,19 @@ li {
   margin-top: 100px;
   /* margin-left: 100px; */
   margin-bottom: 30px;
+  font-size: 65px;
 
 }
 
 .username-header {
   color: #1d1160;
-  font-size: 65px;
+  font-size: 50px;
+  color:  #1d1160;
 }
 
 .user-cards {
   width: 600px;
-  border: 3px outset #00788c;
+  border: 4px outset #00788c;
   /* border-radius: 15px; */
   padding: 9px;
   margin: 0;
