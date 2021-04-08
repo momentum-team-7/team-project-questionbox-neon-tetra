@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 export default function Registration({ isLoggedIn, setAuth }) {
     const [username, setUsername] = useState('')
@@ -55,8 +55,6 @@ export default function Registration({ isLoggedIn, setAuth }) {
                     onChange={(event) => setPassword(event.target.value)}
                     />
                 </div>
-
-
                 <button type='submit'>Register</button>
             </form>
             

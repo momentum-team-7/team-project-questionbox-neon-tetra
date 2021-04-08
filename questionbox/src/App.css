@@ -222,7 +222,7 @@ textarea#answer-body {
 }
 
 .userfeed-wrap {
-  margin-left: 0;
+  margin-left: 250px;
 }
 
 .userfeed-header {
@@ -248,9 +248,6 @@ textarea#answer-body {
   margin-left: 250px;
 }
 
-.App {
-  /* background: #e9e8e8; */
-}
 
 .user-profile {
   margin-left: 250px;
