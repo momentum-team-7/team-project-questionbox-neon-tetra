@@ -1,3 +1,7 @@
+* {
+  font-family: 'Lexend', sans-serif;
+}
+
 .top-nav-bar {
   border-bottom: 2px solid black;
   background-color: #f1f1f1;
@@ -30,9 +34,15 @@
   margin-top: 15%;
 }
 
+p {
+  color: #1d1160;
+  font-family: 'Lexend', sans-serif;
+}
+
 li {
+  list-style-type: none;
   padding-bottom: 50px;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .question-detail {
@@ -51,4 +61,35 @@ li {
 
 .user-profile-divider {
   margin-bottom: 100px;
+}
+
+.feed-header {
+  margin-bottom: 35px;
+}
+.userfeed-wrap {
+  margin-left: 0;
+}
+.userfeed-header {
+  padding-bottom: 20px;
+  margin-top: 100px;
+  /* margin-left: 100px; */
+  margin-bottom: 30px;
+
+}
+
+.username-header {
+  color: #1d1160;
+  font-size: 65px;
+}
+
+.user-cards {
+  width: 600px;
+  border: 3px outset #00788c;
+  /* border-radius: 15px; */
+  padding: 9px;
+  margin: 0;
+}
+
+.App {
+  background: #e9e8e8;
 }
