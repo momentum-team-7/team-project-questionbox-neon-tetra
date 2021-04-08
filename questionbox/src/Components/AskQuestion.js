@@ -53,7 +53,7 @@ export default function AskQuestion({ token, handleDone }) {
                     placeholder="Enter your question"
                     onChange={(event) => setBody(event.target.value)}>
                     </textarea>
-                    <button className="btn btn-primary" type="submit">Ask it!</button>
+                    <button className="btn btn-dark" type="submit">Ask it!</button>
                 </div>            
             </form>
         </div>

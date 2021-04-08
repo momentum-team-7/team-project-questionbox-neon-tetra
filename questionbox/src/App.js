@@ -44,12 +44,12 @@ function App() {
             <div className='top-nav-buttons'>
               {isLoggedIn ? (
                 <>
-                  <Link to="/logOut" onClick={logOut} type="button" className="btn btn-primary">Log Out</Link>
+                  <Link to="/logOut" onClick={logOut} type="button" className="btn btn-dark">Log Out</Link>
                 </>  
               ) : (
                 <>
-                  <Link to="/Registeration" type="button" className="btn btn-primary">Register</Link>
-                  <Link to="/Login" type="button" className="btn btn-primary">Log In</Link>
+                  <Link to="/Registeration" type="button" className="btn btn-dark">Register</Link>
+                  <Link to="/Login" type="button" className="btn btn-dark">Log In</Link>
                 </>
               )}
             </div>
@@ -59,14 +59,14 @@ function App() {
         <div>
           <ul className='side-nav-bar'>
             <li>
-              <Link to="/" type="button" className="btn btn-primary">Home</Link>
+              <Link to="/" type="button" className="btn btn-dark">Home</Link>
             </li>
             <li>
-            <Link to="/userfeed" type="button" className="btn btn-primary">Users</Link>
+            <Link to="/userfeed" type="button" className="btn btn-dark">Users</Link>
             </li>
               {isLoggedIn? (
                   <li>
-                  <Link to="/AskQuestion" type="button" className="btn btn-primary">Ask it</Link>
+                  <Link to="/AskQuestion" type="button" className="btn btn-dark">Ask it</Link>
                   </li>
               ) : (
                 <></>
