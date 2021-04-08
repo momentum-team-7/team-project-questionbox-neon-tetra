@@ -196,7 +196,7 @@ textarea#answer-body {
 }
 
 .userfeed-wrap {
-  margin-left: 0;
+  margin-left: 250px;
 }
 
 .userfeed-header {
@@ -222,7 +222,4 @@ textarea#answer-body {
   margin: 0;
 }
 
-.App {
-  background: #e9e8e8;
-}
 
