@@ -32,10 +32,9 @@ export default function Login({ setAuth, isLoggedIn }) {
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label to='username'>
-                        Username
-                    </label>
-                    <input 
+                    <input
+                    placeholder='Username'
+                    className='form-control'
                     type='text'
                     id='username'
                     value={username}
@@ -43,16 +42,15 @@ export default function Login({ setAuth, isLoggedIn }) {
                     />
                 </div>
                 <div>
-                    <label to='password'>
-                        Password
-                    </label>
                     <input
+                    className='form-control'
+                    placeholder='Password'
                     type='text'
                     id='password'
                     onChange={(event) => setPassword(event.target.value)}
                     />
                 </div>
-                <button type='submit'>Log in</button>
+                <button className='btn btn-lg btn-primary btn-block' type='submit'>Log in</button>
             </form>
         </div>
     )
