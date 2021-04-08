@@ -4,34 +4,43 @@
 
 .top-nav-bar {
   border-bottom: 2px solid black;
-  background-color: #f1f1f1;
+  background-color: #D0D0D0;
   display: flex;
   position: fixed;
   top: 0;
   width: 100%;
+  /* align-items: right; */
+  justify-content: flex-end;
+}
+
+.logo {
+  margin-right: 750px;
+  text-align: left;
 }
 
 .top-nav-buttons {
-  align-items: left;
-  justify-content: flex-end;
+  margin-top: 6px;
+  margin-right: 15px;
 }
 
 .side-nav-bar {
     list-style-type: none;
     margin: 0;
-    padding: 0;
-    width: 15%;
-    background-color: #f1f1f1;
+    padding-left: 48px;
+    padding-top: 14px;
+    width: 175px;
+    background-color: #E0E0E0;
     height: 100%; /* Full height */
     position: fixed; /* Make it stick, even on scroll */
     overflow: auto; /* Enable scrolling if the sidenav has too much content */
     border-right: 2px solid black;
+    border-top: 2px solid #E0E0E0;
     align-items: center;
+    top: 53px;
 }
 
-.content-div {
-  margin-left: 26%;
-  margin-top: 15%;
+ul {
+  list-style-type: none; /* Remove bullets */
 }
 
 p {
@@ -45,14 +54,48 @@ li {
   /* margin: auto; */
 }
 
+.question {
+  width: 600px;
+  margin: 0;
+  border: 2px solid black;
+  padding: 9px;
+}
+
+.questionfeed-header {
+  margin-left: 200px;
+  margin-top: 100px;
+  padding-bottom: 20px;
+}
+
+.question-feed-wrapper {
+  margin-left: 200px;
+  margin-top: 25px;
+}
+
+.question-question-title {
+  margin-left: 10px;
+}
+
+.question-question-asked-by {
+  font-size: 14px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.question-date-created {
+  font-size: 12px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.question-answers-length {
+  margin-left: 10px;
+}
+
 .question-detail {
   border: 1px solid black;
   margin-bottom: 15%;
   padding: 10px;
-}
-
-.question-answers {
-  border: 1px solid black;
 }
 
 .answers-header {
@@ -63,28 +106,117 @@ li {
   margin-bottom: 100px;
 }
 
+
+.askquestion-wrapper {
+  margin-left: 250px;
+  margin-top: 100px;
+  width: 615px;
+}
+
+input#question-title {
+  margin-top: 15px;
+  margin-bottom: 8px;
+  width: 450px;
+}
+
+textarea#question-body {
+  width: 600px;
+  height: 300px;
+
+}
+
+.question-detail-container {
+  margin-top: 125px;
+  margin-left: 250px;
+}
+
+.question-detail {
+  width: 600px;
+  border: 2px solid black;
+  margin-bottom: 50px;
+}
+
+.question-body {
+  font-size: 15px;
+}
+
+.asked-by {
+  font-size: 13px;
+}
+
+.date-created {
+  font-size: 12px;
+}
+
+textarea#answer-body {
+  width: 400px;
+  height: 100px;
+}
+
+.question-answers {
+  margin-top: 30px;
+
+}
+
+.answer {
+  border: 2px solid #D0D0D0;
+  width: 600px;
+  height: 275px;
+  margin-top: 10px;
+}
+
+.answer-body {
+  margin-left: 15px;
+  margin-top: 13px;
+  margin-bottom: 75px;
+}
+
+.answerer {
+  margin-right: 15px;
+  text-align: right;
+  margin-top: 8px;
+  font-size: 13px;
+
+}
+
+.likes-text {
+  text-align: right;
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+.like-button {
+  margin-left: 15px;
+  
+}
+
+
 .feed-header {
   margin-bottom: 35px;
 }
+
 .userfeed-wrap {
   margin-left: 0;
 }
+
 .userfeed-header {
   padding-bottom: 20px;
   margin-top: 100px;
   /* margin-left: 100px; */
   margin-bottom: 30px;
+  font-size: 65px;
 
 }
 
 .username-header {
   color: #1d1160;
-  font-size: 65px;
+  font-size: 50px;
+  color:  #1d1160;
 }
 
 .user-cards {
   width: 600px;
-  border: 3px outset #00788c;
+  border: 4px outset #00788c;
   /* border-radius: 15px; */
   padding: 9px;
   margin: 0;
@@ -93,3 +225,4 @@ li {
 .App {
   background: #e9e8e8;
 }
+

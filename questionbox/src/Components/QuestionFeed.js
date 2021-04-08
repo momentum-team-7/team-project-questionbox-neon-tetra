@@ -32,7 +32,7 @@ const [questions, setQuestions] = useState([])
 
 
     return (
-        <div>
+        <div className="question-feed-wrapper">
             <ul>
             {questions.map((question) => (
                 <li key={question.id}>

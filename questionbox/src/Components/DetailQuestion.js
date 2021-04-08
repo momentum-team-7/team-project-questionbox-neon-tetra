@@ -68,12 +68,11 @@ export default function DetailQuestion({ token }) {
     return (
         <div className='question-detail-container'>
             <div className='question-detail'>
-                <h1>Question Details</h1>
-                <h4>Question: "{questionDetail.title}?"</h4>
-                <p>Asked By: <Link to={`/owner/${questionDetail.owner_id}`}>{questionDetail.owner}</Link></p>
-                <p>Date Asked: {questionDetail.date_created}</p>
-                <p>Question Body: {questionDetail.body}</p>
-                <button
+                <h4>"{questionDetail.title}?"</h4>
+                <div className="question-body"><p>{questionDetail.body}</p></div>
+                <div className="asked-by"><p>Asked By: <Link to={`/owner/${questionDetail.owner_id}`}>{questionDetail.owner}</Link></p></div>
+                <div className="date-created"><p>Date Asked: {questionDetail.date_created}</p></div>
+                <button className="btn btn-primary"
                 onClick={(event) => deleteQuestion(id, event)}
                 >Delete this question</button>
 
@@ -88,15 +87,16 @@ export default function DetailQuestion({ token }) {
 
             {questionDetail.answers ? (
                 <div className='question-answers'>
-                    <h3 className='answers-header'>Answers:</h3>
+                    <h3 className='answers-header'>Answers({questionDetail.answers.length}):</h3>
                     <ul>
                         {lodash.orderBy(questionDetail.answers, ['likers'], ['desc']).map((answer) => (
-                            <div>
+                            <div className="answer">
                                 <li key={questionDetail.id}>
-                                <p>{answer.body}</p>
-                                <p>Author: <Link to={`/owner/${answer.owner_id}`}>{answer.owner}</Link></p>
-                                <p>Likes: {answer.likers.length} </p>
+                                <div className="answer-body"><p>{answer.body}</p></div>
+                                <div className="answerer"><p>Answerer: <Link to={`/owner/${answer.owner_id}`}>{answer.owner}</Link></p></div>
+                                <div className="likes-text"><p>Likes: {answer.likers.length} </p></div>
                                 <button
+                                className="like-button"
                                 value={answer.id}
                                 onClick={(event) => (likeAnswer(event.target.value))}
                                 >
