@@ -10,6 +10,7 @@ export default function Home() {
     return (
         <div>
             <div className="questionfeed-header"><h1>What our users are asking...</h1></div>
+
                     <QuestionFeed
                     />
             {/* <AskQuestion />         */}
