@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 
 
-export default function AskQuestion({ token }) {
+export default function AskQuestion({ token, handleDone }) {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
     const [submitted, setSubmitted] = useState(false)
@@ -33,7 +33,14 @@ export default function AskQuestion({ token }) {
             {
                 headers: { Authorization: `Token ${token}`},
             })
-            }
+            .then((response) => {
+                if(response.data != null) {
+                    alert('Your question was submitted!')
+                    return <Redirect to='/' />
+                }
+            })
+        }
+            
         // setSubmitted(true);
         // if (submitted) {
         //     return <Redirect to="/" />

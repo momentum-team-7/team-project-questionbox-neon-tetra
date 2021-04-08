@@ -8,7 +8,7 @@
 }
 
 .top-nav-buttons {
-  align-items: right;
+  align-items: left;
   justify-content: flex-end;
 }
 
@@ -47,4 +47,8 @@ li {
 
 .answers-header {
   padding-left: 10px;
+}
+
+.user-profile-divider {
+  margin-bottom: 100px;
 }

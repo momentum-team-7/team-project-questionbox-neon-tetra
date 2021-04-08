@@ -3,7 +3,8 @@ import Question from './Question'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import AnswerQuestion from './AnswerQuestion'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
+import UserFeed from './UserFeed'
 
 
 export default function DetailQuestion({ token }) {
@@ -34,7 +35,7 @@ export default function DetailQuestion({ token }) {
             .then((response) => {
                 console.log('delete', response)
                 if(response.data != null) {
-                    alert('Question was deleted successfully');
+                    alert('Question was deleted successfully! Press home to check');
                 }
             },
             )}
@@ -87,12 +88,12 @@ export default function DetailQuestion({ token }) {
                                 <li key={questionDetail.id}>
                                 <p>{answer.body}</p>
                                 <p>Author: <Link to={`/owner/${answer.owner_id}`}>{answer.owner}</Link></p>
-                                <p>&#128077;: {answer.likers.length} </p>
+                                <p>Likes: {answer.likers.length} </p>
                                 <button
                                 value={answer.id}
                                 onClick={(event) => (likeAnswer(event.target.value))}
                                 >
-                                    Like
+                                    &#128077;
                                 </button>
                                 </li>
                             </div>    
