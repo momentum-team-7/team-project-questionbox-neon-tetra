@@ -8,8 +8,11 @@ export default function AskQuestion({ token, handleDone }) {
     const [body, setBody] = useState("")
     const [submitted, setSubmitted] = useState(false)
     
-    
 
+    if (submitted) {
+        return <Redirect to='/' />
+    }
+   
     const handleSubmit = (event) => {
         console.log('handleSubmit running')
         event.preventDefault()
@@ -26,16 +29,11 @@ export default function AskQuestion({ token, handleDone }) {
             .then((response) => {
                 if(response.data != null) {
                     alert('Your question was submitted!')
-                    return <Redirect to='/' />
+                    setSubmitted(true)
                 }
             })
         }
-            
-        // setSubmitted(true);
-        // if (submitted) {
-        //     return <Redirect to="/" />
-        // }
-
+    
     return (
         <div className="askquestion-wrapper">
             <h1>Ask Your Question</h1>
