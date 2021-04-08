@@ -24,12 +24,12 @@ export default function UserFeed() {
     console.log('users is', users)
 
     return (
-        <div>
-            <h1>UserFeed baby</h1>
+        <div className='userfeed-wrap'>
+            <h1 className='userfeed-header'>UserFeed</h1>
             {users.map((user) => (
                 <li key={user.id}>
-                <div>                
-                <Link to={`/owner/${user.id}`}><h3>{user.username}</h3></Link>
+                <div className='user-cards'>                
+                <Link to={`/owner/${user.id}`} ><h3 className='username-header'>{user.username}</h3></Link>
                 <p>Questions asked: {user.questions.length}</p>
                 <p>Answers Submitted: {user.answers.length}</p>
                 </div>

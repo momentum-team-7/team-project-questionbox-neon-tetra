@@ -9,7 +9,7 @@ export default function Home() {
 
     return (
         <div>
-            <h1>Question Feed</h1>
+            <h1 className='feed-header'>Question Feed</h1>
                     <QuestionFeed
                     />
             {/* <AskQuestion />         */}
