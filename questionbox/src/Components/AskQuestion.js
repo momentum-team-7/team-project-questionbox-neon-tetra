@@ -8,16 +8,6 @@ export default function AskQuestion({ token, handleDone }) {
     const [body, setBody] = useState("")
     const [submitted, setSubmitted] = useState(false)
     
-    // if (!isLoggin) {
-    //     return <Redirect to="/login" />
-    // }
-
-
-    // this was to move the user off the AskQuestion page on submission of the form, but the form wasn't actually submitting and the user was routed off too quickly // add line 17 down to the final button at the botttom
-    // onClick={handleClick}
-    // const history = useHistory();
-    // const handleClick = () => {
-    //     history.push("/UserFeed")
     
 
     const handleSubmit = (event) => {
@@ -47,13 +37,14 @@ export default function AskQuestion({ token, handleDone }) {
         // }
 
     return (
-        <div>
-            <h2>Ask a Question--</h2>
+        <div className="askquestion-wrapper">
+            <h1>Ask Your Question</h1>
             <form onSubmit={(event)=> handleSubmit(event)}>
                 <div className="question-title">
                     <label for="question-title"></label>
                     <input id="question-title"
                     type="text"
+                    placeholder='Enter your title'
                     onChange={(event) => setTitle(event.target.value)}>
                     </input>
                 </div>
@@ -61,9 +52,10 @@ export default function AskQuestion({ token, handleDone }) {
                     <label for="question-body"></label>
                     <textarea id="question-body"
                     type="text"
+                    placeholder="Enter your question"
                     onChange={(event) => setBody(event.target.value)}>
                     </textarea>
-                    <button type="submit">Ask it!</button>
+                    <button className="btn btn-primary" type="submit">Ask it!</button>
                 </div>            
             </form>
         </div>

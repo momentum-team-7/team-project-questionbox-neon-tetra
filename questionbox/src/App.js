@@ -40,7 +40,7 @@ function App() {
 
         <header className="App-header">
           <div className='top-nav-bar'>
-            <h1>Question Box</h1>
+            <div className="logo"><h1>Question Box</h1></div>
             <div className='top-nav-buttons'>
               {isLoggedIn ? (
                 <>

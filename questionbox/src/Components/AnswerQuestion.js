@@ -32,12 +32,14 @@ export default function AnswerQuestion({ question_id, token, handleDone }) {
                     id='answer-body'
                     value={body}
                     type='text'
+                    placeholder='Enter your answer'
                     onChange={(event) => setBody(event.target.value)}></textarea>
                 </div>
                 <div>
-                    <button 
+                    <button
+                    className="btn btn-primary" 
                     type='submit'>
-                        Submit
+                        Submit your answer
                     </button>
                 </div>
             </form>
