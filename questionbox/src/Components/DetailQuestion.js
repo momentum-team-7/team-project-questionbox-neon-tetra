@@ -70,7 +70,7 @@ export default function DetailQuestion({ token }) {
                 <div className="question-body"><p>{questionDetail.body}</p></div>
                 <div className="asked-by"><p>Asked By: <Link to={`/owner/${questionDetail.owner_id}`}>{questionDetail.owner}</Link></p></div>
                 <div className="date-created"><p>Date Asked: {questionDetail.date_created}</p></div>
-                <button className="btn btn-primary"
+                <button className="btn btn-dark"
                 onClick={(event) => deleteQuestion(id, event)}
                 >Delete this question</button>
 

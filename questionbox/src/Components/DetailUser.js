@@ -32,22 +32,22 @@ export default function DetailUser() {
                 </div>
                 {userDetail.questions ? (
                     <div>
-                        <h4>Number of Questions asked: {userDetail.questions.length}</h4>
+                        <h4 className='user-profile-questions-asked'>Number of Questions asked: {userDetail.questions.length}</h4>
                         <h4 className='user-profile-divider'>Number of Answers submitted: {userDetail.answers.length}</h4>
                         <div>
                             <div className="user-questions">
-                                <h3>Questions</h3>
+                                <h3>Questions({userDetail.questions.length})</h3>
                                 {userDetail.questions.map((question) => (
-                                    <li key={question.id}><Link to={`/question/${question.id}`}>{question.title}</Link></li>
+                                    <li className="li-user-questions" key={question.id}><Link to={`/question/${question.id}`}>{question.title}</Link></li>
                                 ))}
                             </div>
 
                             <div className="user-answers">
-                                <h3>Answers</h3>
+                                <h3 className="h3-answers">Answers({userDetail.answers.length})</h3>
                                 {userDetail.answers.map((answer) => (
-                                    <div>    
-                                        <li key={answer.id}>{answer.body}</li>
-                                        <p>Question: <Link to={`/question/${answer.question}`}>{answer.question_title}</Link></p>
+                                    <div className="userDetail-answer-box">    
+                                        <li className="userDetail-answer" key={answer.id}>{answer.body}</li>
+                                        <div className="userDetail-answer-question"><p>Question: <Link to={`/question/${answer.question}`}>{answer.question_title}</Link></p></div>
                                     </div>    
                                 ))}
                             </div>
