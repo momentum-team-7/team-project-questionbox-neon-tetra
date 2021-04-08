@@ -10,6 +10,7 @@ export default function DetailUser() {
     const { id } = useParams()
     const [userDetail, setUserDetail] = useState([])
 
+
     useEffect(() => {
         axios
             .get(`http://swordtail.herokuapp.com/users/${id}`)
@@ -25,16 +26,19 @@ export default function DetailUser() {
             
     },[id]);
 
+
     
     return (
         <div className ="user-profile">
-            
-                <h1>{userDetail.username}'s Profile</h1>
+                <div className='user-profile-top'>
+                    <h1>{userDetail.username}'s Profile</h1>
+                    
+
+                </div>
                 {userDetail.questions ? (
                     <div>
                         <h4>Number of Questions asked: {userDetail.questions.length}</h4>
-                        <h4>Number of Answers submitted: {userDetail.answers.length}</h4>
-
+                        <h4 className='user-profile-divider'>Number of Answers submitted: {userDetail.answers.length}</h4>
                         <div>
                             <div className="user-questions">
                                 <h3>Questions</h3>
@@ -42,6 +46,7 @@ export default function DetailUser() {
                                     <li key={question.id}><Link to={`/question/${question.id}`}>{question.title}</Link></li>
                                 ))}
                             </div>
+
                             <div className="user-answers">
                                 <h3>Answers</h3>
                                 {userDetail.answers.map((answer) => (

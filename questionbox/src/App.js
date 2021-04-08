@@ -44,13 +44,12 @@ function App() {
             <div className='top-nav-buttons'>
               {isLoggedIn ? (
                 <>
-                  <Link to="/AskQuestion">Ask it</Link>
-                  <Link to="/logOut" onClick={logOut}>Log Out</Link>
+                  <Link to="/logOut" onClick={logOut} type="button" className="btn btn-primary">Log Out</Link>
                 </>  
               ) : (
                 <>
-                  <Link to="/Registeration">Register</Link>
-                  <Link to="/Login">Log In</Link>
+                  <Link to="/Registeration" type="button" className="btn btn-primary">Register</Link>
+                  <Link to="/Login" type="button" className="btn btn-primary">Log In</Link>
                 </>
               )}
             </div>
@@ -65,12 +64,13 @@ function App() {
             <li>
             <Link to="/userfeed" type="button" className="btn btn-primary">Users</Link>
             </li>
-            <li>
-              <button>Questions</button>
-            </li>
-            <li>
-              <button>My Profile</button>
-            </li>
+              {isLoggedIn? (
+                  <li>
+                  <Link to="/AskQuestion" type="button" className="btn btn-primary">Ask it</Link>
+                  </li>
+              ) : (
+                <></>
+              )}
           </ul>
         </div>
 
