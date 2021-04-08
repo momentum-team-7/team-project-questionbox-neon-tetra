@@ -18,6 +18,10 @@ export default function AskQuestion({ token, handleDone }) {
     // const history = useHistory();
     // const handleClick = () => {
     //     history.push("/UserFeed")
+
+    if (submitted) {
+        return <Redirect to='/' />
+    }
     
 
     const handleSubmit = (event) => {
@@ -36,7 +40,7 @@ export default function AskQuestion({ token, handleDone }) {
             .then((response) => {
                 if(response.data != null) {
                     alert('Your question was submitted!')
-                    return <Redirect to='/' />
+                    setSubmitted(true)
                 }
             })
         }

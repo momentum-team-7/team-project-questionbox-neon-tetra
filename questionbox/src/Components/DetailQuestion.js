@@ -5,12 +5,14 @@ import axios from 'axios'
 import AnswerQuestion from './AnswerQuestion'
 import { Link, Redirect } from 'react-router-dom'
 import UserFeed from './UserFeed'
+import lodash from 'lodash'
 
 
 export default function DetailQuestion({ token }) {
     const { id } = useParams()
     const [questionDetail, setQuestionDetail] = useState([])
     const [answers, setAnswers] = useState([])
+    const [deleted, setDeleted] = useState(false)
 
     useEffect(() => {
         axios
@@ -25,6 +27,10 @@ export default function DetailQuestion({ token }) {
         setAnswers([...answers, newAnswers])
     }
 
+    if (deleted) {
+        return <Redirect to='/' />
+    }
+
     const deleteQuestion = () => {
         axios
             .delete(`http://swordtail.herokuapp.com/questions/${id}`,
@@ -36,6 +42,7 @@ export default function DetailQuestion({ token }) {
                 console.log('delete', response)
                 if(response.data != null) {
                     alert('Question was deleted successfully! Press home to check');
+                    setDeleted(true)
                 }
             },
             )}
@@ -83,7 +90,7 @@ export default function DetailQuestion({ token }) {
                 <div className='question-answers'>
                     <h3 className='answers-header'>Answers:</h3>
                     <ul>
-                        {questionDetail.answers.map((answer) => (
+                        {lodash.orderBy(questionDetail.answers, ['likers'], ['desc']).map((answer) => (
                             <div>
                                 <li key={questionDetail.id}>
                                 <p>{answer.body}</p>
@@ -98,7 +105,6 @@ export default function DetailQuestion({ token }) {
                                 </li>
                             </div>    
                         ))}
-                        
                     </ul>
                 </div>
                 ) : (
